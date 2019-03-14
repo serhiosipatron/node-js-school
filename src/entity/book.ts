@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinTable } from 'ty
 import { Length, IsDate } from "class-validator";
 import { User } from './user';
 
-@Entity()
+@Entity('books')
 export class Book {
     @PrimaryGeneratedColumn()
     id: number;
