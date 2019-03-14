@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinTable } from 'typeorm';
-import { Length, IsDate } from "class-validator";
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, ManyToOne, JoinTable } from 'typeorm';
+import { Length } from "class-validator";
 import { User } from './user';
 
 @Entity('books')
@@ -19,7 +19,7 @@ export class Book {
     @Length(1,100)
     description: string;
 
-    @IsDate()
+    @CreateDateColumn()
     date: Date;
 
     @ManyToOne(type => User, user => user.books)
